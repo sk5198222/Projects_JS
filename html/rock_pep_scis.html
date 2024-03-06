@@ -5,25 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rock_Paper_Game</title>
 
-  <link rel="stylesheet" href="css/rockPepSci.css">
+  <link rel="stylesheet" href="/css/rockPepSci.css">
 </head>
 <body>
-  <h1>Rock Paper Scissor Game</h1>
-  <div>
-    <button onclick="
-        Move('Rock');
-      ">Rock</button>
-    <button onclick="
-      Move('Paper');
-    ">Paper</button>
-    <button onclick="
-      Move('Scissor');
-    ">Scissor</button>
-    <button onclick="
-      win=lose=tie=0;
+  <h1>Rock Paper Scissor</h1>
+  <div class="btns">
+    <button class="moves" onclick="
+        Move('rock');
+      "><img class="pngs" src="/images/rock.png"></button>
+    <button class="moves" onclick="
+      Move('paper');
+    "><img class="pngs" src="/images/paper.png"></button>
+    <button class="moves" onclick="
+      Move('scissor');
+    "><img class="pngs" src="/images/scissor.png"></button>
+  </div>
+
+  <div class="inner">
+    <h3 class="res"></h3>
+    <p class="show"></p>
+    <p class="counts"></p>
+    <button class="resetBtn" onclick="
+      resetScore();
     ">Reset Score</button>
   </div>
 
-  <script src="js/rockPepSci.js"></script>
+  <script src="/js/rockPepSci.js"></script>
 </body>
 </html>

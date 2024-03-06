@@ -1,15 +1,16 @@
 let cMove='';
-    let uMove='';
+let uMove='';
 
-    const score={win:0,lose:0,tie:0};
+    let score={win:0,lose:0,tie:0};
+
     function compMove(){
       let move=Math.random();
       if(move<=(1/3))
-        cMove= 'Rock';
+        cMove= 'rock';
       else if(move<=(1/6))
-        cMove= 'Paper';
+        cMove= 'paper';
       else
-        cMove= 'Scissor';
+        cMove= 'scissor';
       return cMove;
     }
 
@@ -18,24 +19,35 @@ let cMove='';
       u=move;
       res(c,u);
     }
+
     function res(cM,uM){
-      let fin='';
+      let inHTML='';
+
       if(cM===uM){
-        fin='Tied';
-        tie++;
+        document.querySelector('.res').textContent='Tied';
+        score.tie++;
       } 
-      else if(cM==='Rock' && uM==='Paper' || cM==='Scissor' && uM==='Rock' || cM==='Paper' && uM==='Scissor'){
-        fin='Won';
-        win++;
+      else if(cM==='rock' && uM==='paper' || cM==='scissor' && uM==='rock' || cM==='paper' && uM==='scissor'){
+        document.querySelector('.res').textContent='Won';
+        score.win++;
       }
       else{
-        fin='Lost';
-        lose++;
+        document.querySelector('.res').textContent='Lost';
+        score.lose++;
       }
+      
+      inHTML=`You <img class="pngs" src="/images/${uM}.png">    <img class="pngs" src="/images/${cM}.png"> Computer`;
 
-      let output=`You choose: ${uM}.
-Computer choose: ${cM}.\n`;
-(fin==='Won') ?  output+=`Congrats, you ${fin}...!!!\nWoohooo!!!` :(fin==='Lost') ? output+=`Bad move, you ${fin}...!!!\nTry again` : output+=`Don\'t worry', you both ${fin}...!!!\nPlay again`;
+      document.querySelector('.show').innerHTML=inHTML;
+      document.querySelector('.counts').textContent=`Wins: ${score.win}, Ties: ${score.tie}, Losses: ${score.lose}`;
+    }
 
-      alert(output+`\nWin: ${win}  Lose: ${lose}  Tie: ${tie}`);
+    function resetScore(){
+      score.win=0;
+      score.lose=0;
+      score.tie=0;
+
+      document.querySelector('.res').innerHTML='Score has been reset.';
+      document.querySelector('.show').innerHTML='Play again!!!';
+      document.querySelector('.counts').textContent=`Wins: ${score.win}, Ties: ${score.tie}, Losses: ${score.lose}`;
     }
