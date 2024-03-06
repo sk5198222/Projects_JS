@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+</head>
+<body>
+  <p>
+    <button onclick="
+      assign('1');
+      getVal();
+    ">1</button>
+    <button onclick="
+      assign('2');
+      getVal();
+    ">2</button>
+    <button onclick="
+      assign('3');
+      getVal();
+    ">3</button>
+  </p>
+  <p>
+    <button onclick="
+      assign('4');
+      getVal();
+    ">4</button>
+    <button onclick="
+      assign('5');
+      getVal();
+    ">5</button>
+    <button onclick="
+      assign('6');
+      getVal();
+    ">6</button>
+  </p>
+  <p>
+    <button onclick="
+        assign(' + ');
+        getVal();
+      ">+</button>
+    <button onclick="
+      assign(' - ');
+      getVal();
+    ">-</button>
+    <button onclick="
+      res(calc);
+    ">=</button>
+  </p>
+  <p>
+    <button onclick="
+        calc='';
+        console.log('All clear');
+      ">C</button>
+  </p>
+  <script>
+    let calc='';
+
+    function assign(val){
+      calc+=val;
+    }
+
+    function getVal(){
+      console.log(calc);
+    }
+
+    function res(cal){
+      calc=eval(cal);
+      console.log(calc);
+    }
+  </script>
+</body>
+</html>

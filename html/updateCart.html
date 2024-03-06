@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart System</title>
+  <style>
+    *{
+      font-family: arial;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Cart System</h1>
+  <h4 class="dis"></h4>
+  <div class="addCart">
+    <button onclick="
+        cart++;
+        print();
+      ">Add to Cart (+1)</button>
+    <button onclick="
+          cart+=2;
+          print();
+    ">+2</button>
+    <button onclick="
+          cart+=4;
+          print();
+    ">+4</button>
+    <button onclick="
+          cart+=6;
+          print();
+    ">+6</button>
+  </div>
+  <div class="delCart">
+    <button onclick="
+        if(cart>0)
+          cart--;
+        print();
+      ">Remove Cart</button>
+    <button onclick="
+          if(cart<=2)
+            cart=0;
+          else
+            cart-=2;
+          print();
+    ">-2</button>
+    <button onclick="
+          if(cart<=4)
+            cart=0;
+          else
+            cart-=4;
+          print();
+    " >-4</button>
+    <button onclick="
+          if(cart<=6)
+            cart=0;
+          else
+            cart-=6;
+          print();
+    ">-6</button>
+  </div>
+
+  <script>
+    let cart=localStorage.getItem('val');
+
+    if(cart===null)
+      cart=0;
+    
+    function print(){
+      localStorage.setItem('val',JSON.stringify(cart));
+      document.querySelector('.dis').textContent=`Cart quantity: ${localStorage.getItem('val')}`;
+    }
+
+    print();
+  </script>
+</body>
+</html>

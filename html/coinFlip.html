@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toss Game</title>
+  <style>
+    *{
+      font-family: arial;
+    }
+  </style>
+</head>
+<body>
+  <h1>Coin flip / Toss Game</h1>
+  <script>
+    let rand=0;
+    let sChoice='';
+  </script>
+  <button onclick="rand=Math.random();
+
+  alert('You have tossed, now make a guess\nand we will tell you whether you won or lose!');
+  
+  sChoice= (rand<=0.5) ? 'head' : 'tail';
+
+  ">Toss</button>
+  <br>
+  <h3>Make a guess</h3>
+
+  <div class="buttons">
+    <button onclick="
+
+      (sChoice==='head') ? alert('You won, it\'s Head') : alert('You lost, it\'s Tail\nBetter luck next time!!!');
+    ">Head</button>
+    <button onclick="   
+
+    (sChoice==='tail') ? alert('You won, it\'s Tail') : alert('You lost, it\'s Head\nBetter luck next time!!!');
+    ">Tail</button>
+  </div>
+</body>
+</html>
