@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Calculator</title>
+  <link rel="stylesheet" href="/css/calculator.css">
 </head>
 <body>
   <p>
@@ -53,21 +55,6 @@
         console.log('All clear');
       ">C</button>
   </p>
-  <script>
-    let calc='';
-
-    function assign(val){
-      calc+=val;
-    }
-
-    function getVal(){
-      console.log(calc);
-    }
-
-    function res(cal){
-      calc=eval(cal);
-      console.log(calc);
-    }
-  </script>
+  <script src="/js/calculator.js"></script>
 </body>
 </html>
