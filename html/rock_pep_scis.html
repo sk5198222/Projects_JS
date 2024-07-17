@@ -10,24 +10,17 @@
 <body>
   <h1>Rock Paper Scissor</h1>
   <div class="btns">
-    <button class="moves" onclick="
-        Move('rock');
-      "><img class="pngs" src="/images/rock.png"></button>
-    <button class="moves" onclick="
-      Move('paper');
-    "><img class="pngs" src="/images/paper.png"></button>
-    <button class="moves" onclick="
-      Move('scissor');
-    "><img class="pngs" src="/images/scissor.png"></button>
+    <button class="moves rockBtn"><img class="pngs" src="/images/rock.png"></button>
+    <button class="moves paperBtn"><img class="pngs" src="/images/paper.png"></button>
+    <button class="moves scissorBtn"><img class="pngs" src="/images/scissor.png"></button>
   </div>
 
   <div class="inner">
     <h3 class="res"></h3>
     <p class="show"></p>
     <p class="counts"></p>
-    <button class="resetBtn" onclick="
-      resetScore();
-    ">Reset Score</button>
+    <button class="resetBtn">Reset Score</button>
+    <button class="resetBtn aPBtn">Auto Play</button>
   </div>
 
   <script src="/js/rockPepSci.js"></script>
